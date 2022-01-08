@@ -1,0 +1,109 @@
+:root {
+/*Principales*/
+--Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+/*Neutrales*/
+--Very-grey: hsl(234, 12%, 34%);
+--Grey-fifty: hsl(229, 6%, 66%);
+--Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---- Titulos ---- */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-content h1 {
+    font-weight: lighter;
+    color: var(--Very-grey);
+    margin-top: 20px;
+    font-size: 24px;
+}
+.header-content h2 {
+    color: var(--Very-grey);
+    font-size: 24px;
+
+}
+.header-content p {
+    color: var(--Grey-fifty);
+    font-size: 14px;
+    width: 300px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ---- Tarjetas de colores ----*/
+.tarjet-content {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 30px auto; 
+    border-radius: 10px;
+    box-shadow: 5px 8px 40px 5px #d4d3d3;
+}
+.tarjet-content img {
+    margin-left: 210px;
+    margin-top: 20px;
+}
+.tarjet-content h4 {
+    margin: 20px auto 0 20px;
+    color: var(--Very-grey);
+    font-size: 18px;
+}
+.tarjet-content p {
+    margin: 10px 20px 0 20px; 
+    color: var(--Grey-fifty);
+    font-size: 12px;
+}
+
+.content-one {    border-top: 4px solid var(--Cyan);}
+.content-two {    border-top: 4px solid var(--Red);}
+.content-three {  border-top: 4px solid var(--Orange);}
+.content-four {   border-top: 4px solid var(--Blue);}
+
+/* ---- Media screen ---- */
+@media (min-width: 1000px) {
+    /* ---- Textos header ---- */
+    .header-content h1 {
+        margin-top: 20px;
+        font-size: 28px;
+        margin-top: 50px;
+    }
+    .header-content h2 {
+        font-size: 28px;
+    }
+    .header-content p {
+        font-size: 14px;
+        width: 500px;
+        margin-bottom: 50px;
+    }
+
+    /* ---- Grid Tarjetas ---- */
+    .container-tarjets {
+        display: grid;
+        place-content: center;
+        grid-template-columns: 330px 330px 330px;
+        grid-template-rows: 220px 220px;
+        grid-template-areas:
+            'leftt centertop rightt'
+            'leftt centerbottom rightt'    
+        ;
+    }
+    .content-one { grid-area: leftt; place-self: center;}
+    .content-two { grid-area: centertop;}
+    .content-three { grid-area: centerbottom; margin-top: 10px;}
+    .content-four { grid-area: rightt;place-self: center;}
+}
